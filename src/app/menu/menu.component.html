@@ -1,0 +1,98 @@
+<app-autorizado [rol]="'user'">
+  <ng-container autorizado >
+    <mat-nav-list>
+      <mat-list-item >
+        <a (click)="onSidenavClose()"  matline>HI,{{seguridadService.obtenerCampoJWT('email') }}</a><mat-icon>person</mat-icon>
+   </mat-list-item>
+   <mat-list-item >
+    <a (click)="onSidenavClose()"  matline>Home</a> <mat-icon>home</mat-icon>
+</mat-list-item>
+<mat-list-item >
+  <a (click)="onSidenavClose()"  matline>Tendencias</a><mat-icon> streetview</mat-icon>
+</mat-list-item>
+<mat-list-item >
+  <a (click)="onSidenavClose()"  matline>Rebajas</a><mat-icon>vertical_align_bottom</mat-icon> 
+</mat-list-item>
+<mat-list-item >
+  <a (click)="onSidenavClose()"  matline>Exit</a> <mat-icon>logout</mat-icon>
+</mat-list-item>
+
+     </mat-nav-list>
+
+   
+
+   </ng-container>
+  <ng-container *ngIf="seguridadService.obtenerRol()!= 'admin'"  noAutorizado>
+   
+   <mat-nav-list>
+      <mat-list-item >
+        <mat-icon>login</mat-icon>
+        <a (click)="onSidenavClose()" routerLink="/login" matline>Login</a>
+    </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item >
+        <mat-icon>login</mat-icon>
+        <a (click)="onSidenavClose()" routerLink="/registro" matline>Registrar</a>
+    </mat-list-item>
+    </mat-nav-list>
+    
+  </ng-container>
+</app-autorizado>
+
+
+<app-autorizado [rol]="'admin'">
+  <ng-container autorizado>
+    <mat-nav-list>
+      <mat-list-item >
+        <a (click)="onSidenavClose()"  matline>HI,{{seguridadService.obtenerCampoJWT('email')}}</a><mat-icon>person</mat-icon>
+   </mat-list-item>
+   </mat-nav-list>
+      <mat-nav-list>
+      <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Productos</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/productos/Crear" (click)="onSidenavClose()">Crear</button>
+      <button mat-menu-item routerLink="/productos"(click)="onSidenavClose()">listado</button>
+    </mat-menu>
+    </mat-nav-list>
+
+
+    <mat-nav-list>
+      <mat-list-item [matMenuTriggerFor]="menu1">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Genero</a>
+    </mat-list-item>
+    <mat-menu #menu1="matMenu">
+      <button mat-menu-item routerLink="/generos/Crear" (click)="onSidenavClose()">Crear</button>
+      <button mat-menu-item routerLink="/generos"(click)="onSidenavClose()">listado</button>
+    </mat-menu>
+    </mat-nav-list>
+
+
+
+    <mat-nav-list>
+      <mat-list-item [matMenuTriggerFor]="menu2">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Talla</a>
+    </mat-list-item>
+    <mat-menu #menu2="matMenu">
+      <button mat-menu-item routerLink="/talla/Crear" (click)="onSidenavClose()">Crear</button>
+      <button mat-menu-item routerLink="/talla"(click)="onSidenavClose()">listado</button>
+    </mat-menu>
+    </mat-nav-list>
+  </ng-container>
+  <ng-container noAutorizado>
+    
+  </ng-container>
+</app-autorizado>
+
+
+
+
+
+
+
+  

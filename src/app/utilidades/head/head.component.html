@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+    <div >
+       
+       <button mat-icon-button (click)="onToggleSidenav()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+        <a *ngIf="!isSmallScreen"    routerLink="/home">Home</a>
+        
+    </div>
+    <div >
+       
+        
+                 
+        <input *ngIf="isSmallScreen" type="text" placeholder="Search..">
+        <button *ngIf="isSmallScreen" mat-icon-button >
+            <mat-icon>search</mat-icon>
+         </button>
+         
+     </div>
+    <div *ngIf="!isSmallScreen" fxLayout="row" fxLayoutAlign="space-between">
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a routerLink="/owner">Tendencias</a>
+            </li>
+           
+        </ul>
+    </div>
+    <div *ngIf="!isSmallScreen"  fxLayout="row" fxLayoutAlign="space-between">
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a  routerLink="/owner">Rebajas</a>
+            </li>
+           
+        </ul>
+    </div>
+<app-autorizado>
+    <ng-container autorizado>
+        <div  *ngIf="!isSmallScreen" class="espacio">
+            <ul  class="navigation-items">
+                <li>
+                    <a routerLink="/owner">{{seguridadService.obtenerCampoJWT('email')}}</a>
+                </li>
+                <li>
+                    <a (click)="logout()">Exit</a>
+                </li>
+               
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container noAutorizado>
+       
+            <div  *ngIf="!isSmallScreen" class="espacio">
+                <ul  class="navigation-items">
+                    <li>
+                        <a routerLink="/Home">Login</a>
+                    </li>
+                   
+                </ul>
+            </div>
+    </ng-container>
+    
+</app-autorizado>
+
+
+  </mat-toolbar>

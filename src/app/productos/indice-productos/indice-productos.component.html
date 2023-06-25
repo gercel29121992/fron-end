@@ -1,0 +1,31 @@
+<app-listado-generico [listado]="productos">
+    <ng-container contenido>
+      <div class="peliculas-contenedor">
+      <div
+        *ngFor="let producto of productos; let index = index"
+        class="pelicula-contenedor"
+      >
+        <a>
+          <img [src]="foto" alt="Poster" />
+        </a> 
+        <p>
+          <a>{{producto.nombre}}</a>
+        </p>
+        <div>
+          <a mat-flat-button color="primary" (click)="editar(producto.id)">
+            Editar
+          </a>
+          <button (click)="borrar(index,producto.id)"
+          mat-flat-button
+          color="warn"
+          type="button">
+          Borrar
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    </ng-container>
+  </app-listado-generico>
+
+  

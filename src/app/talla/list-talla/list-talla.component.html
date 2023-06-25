@@ -1,0 +1,16 @@
+<H2>LISTADO</H2>
+
+<button mat-flat-button color="primary" routerLink="/talla/Crear">Crear nuevo</button>
+<app-listado-generico [listado]="tallas"></app-listado-generico>
+   
+    <mat-nav-list>
+        <mat-list-item *ngFor="let talla of tallas ; let index = index">
+           <a matLine (click)="editar(talla.id )">{{ talla.nombre }}</a>
+           <button mat-icon-button (click)="borrar(index ,talla.id)">
+              <mat-icon>delete</mat-icon>
+           </button>
+        </mat-list-item>
+      </mat-nav-list>
+    
+
+

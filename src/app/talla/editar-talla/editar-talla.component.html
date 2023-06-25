@@ -1,0 +1,6 @@
+<H2>EDITAR</H2>
+
+<app-formulario-talla  *ngIf="modelo"
+[modelo]="modelo" 
+(submit)="guardarCambios($event)"></app-formulario-talla>
+<mat-spinner *ngIf="!modelo"></mat-spinner>

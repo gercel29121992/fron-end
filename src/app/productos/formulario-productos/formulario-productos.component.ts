@@ -28,7 +28,7 @@ export class FormularioProductosComponent implements OnInit {
       validators: [Validators.required, Validators.minLength(3), primeraLetraMayuscula()]
     }],
     precio: ['', {
-      validators: [Validators.required, Validators.minLength(3), primeraLetraMayuscula()]
+      validators: [Validators.required, Validators.minLength(3)]
     }],
     foto: ['', {
       validators: [Validators.required, Validators.minLength(3), primeraLetraMayuscula()]

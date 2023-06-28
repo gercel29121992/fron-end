@@ -5,6 +5,7 @@ import { productoCreacionDTO } from '../productos';
 
 
 import { ProductosService } from '../productos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-productos',
@@ -19,7 +20,22 @@ export class CrearProductosComponent implements OnInit {
   }
   guardarCambios(producto: productoCreacionDTO) {
    
+    if(producto.nombre){
 
+      this.productosService.crear(producto).subscribe(
+        () => {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'success!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.router.navigate(['/productos']);
+        }
+      );
+
+    }
    
   console.log(producto)
    

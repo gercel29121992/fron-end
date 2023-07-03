@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL:'http://backend-test.us-east-1.elasticbeanstalk.com/api/'
+  apiURL:'https://backend-test.us-east-1.elasticbeanstalk.com/api/'
 };
 
 

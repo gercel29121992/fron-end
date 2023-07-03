@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL:'http://backend-dev.us-east-1.elasticbeanstalk.com/api/'
+  apiURL:'https://back-end20230702211234.azurewebsites.net/api/'
 };
 
 

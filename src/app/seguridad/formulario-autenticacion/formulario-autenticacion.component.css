@@ -5,7 +5,11 @@ form {
 mat-form-field {
     width: 100%;
 }
-
+:host{
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
 button {
     margin-right: 1rem;
 }

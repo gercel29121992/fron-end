@@ -1,6 +1,15 @@
 export interface credencialesUsuario{
     email: string;
     password: string;
+    password2: string;
+    nombre: string;
+    ayudapass: string;
+    apellido: string;
+    sexo: string;
+   
+  
+
+  
 }
 
 export interface respuestaAutenticacion {

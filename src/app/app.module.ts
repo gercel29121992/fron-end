@@ -63,6 +63,8 @@ import { CrearTallaComponent } from './talla/crear-talla/crear-talla.component';
 import { EditarTallaComponent } from './talla/editar-talla/editar-talla.component';
 import { FormularioTallaComponent } from './talla/formulario-talla/formulario-talla.component';
 import { ListTallaComponent } from './talla/list-talla/list-talla.component';
+import { MatInput, MatInputModule } from '@angular/material/input';
+import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
 
 
 
@@ -110,6 +112,8 @@ import { ListTallaComponent } from './talla/list-talla/list-talla.component';
     EditarTallaComponent,
     FormularioTallaComponent,
     ListTallaComponent,
+    ModificarLoginAppComponent,
+  
   
     
     
@@ -136,6 +140,9 @@ import { ListTallaComponent } from './talla/list-talla/list-talla.component';
     MatMenuModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatInputModule,
+   
+    
    
     MarkdownModule.forRoot()
   ],

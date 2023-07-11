@@ -22,6 +22,7 @@ export class RegistroComponent implements OnInit {
   errores: string[] = [];
 
   registrar(credenciales: credencialesUsuario){
+    console.log(credenciales)
     this.seguridadService.registrar(credenciales)
     .subscribe(respuesta => {
       console.log(respuesta);

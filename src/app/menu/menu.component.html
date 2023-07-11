@@ -83,6 +83,19 @@
       <button mat-menu-item routerLink="/talla"(click)="onSidenavClose()">listado</button>
     </mat-menu>
     </mat-nav-list>
+
+    
+    <mat-nav-list>
+      <mat-list-item [matMenuTriggerFor]="menu3">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>configuracion</a>
+    </mat-list-item>
+    <mat-menu #menu3="matMenu">
+      <button mat-menu-item routerLink="/talla/Crear" (click)="onSidenavClose()">aprobar solicitud</button>
+      <button mat-menu-item routerLink="/modificar/login"(click)="onSidenavClose()">user</button>
+    </mat-menu>
+    </mat-nav-list>
+
   </ng-container>
   <ng-container noAutorizado>
     

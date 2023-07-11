@@ -65,6 +65,8 @@ import { FormularioTallaComponent } from './talla/formulario-talla/formulario-ta
 import { ListTallaComponent } from './talla/list-talla/list-talla.component';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
+import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
+import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-user-app/list-user-app.component';
 
 
 
@@ -113,6 +115,8 @@ import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modi
     FormularioTallaComponent,
     ListTallaComponent,
     ModificarLoginAppComponent,
+    ActivarUserAppComponent,
+    ListUserAppComponent,
   
   
     

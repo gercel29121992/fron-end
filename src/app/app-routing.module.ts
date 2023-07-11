@@ -22,12 +22,14 @@ import { CrearTallaComponent } from './talla/crear-talla/crear-talla.component';
 import { EditarTallaComponent } from './talla/editar-talla/editar-talla.component';
 import { ListTallaComponent } from './talla/list-talla/list-talla.component';
 import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
+import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'login', component: LoginComponent},
   {path: 'modificar/login', component: ModificarLoginAppComponent},
+  {path: 'modificar/login/activate', component:  ActivarUserAppComponent},
   {path: 'productos', component: IndiceProductosComponent},
   {path: 'productos/Crear', component: CrearProductosComponent},
   {path: 'productos/editar/:id', component: EditarProductosComponent},

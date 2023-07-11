@@ -21,3 +21,10 @@ export interface usuarioDTO{
     id: string;
     email: string;
 }
+export interface paginacion{
+ 
+  
+    paginas:number;
+    record:number;
+    
+  }

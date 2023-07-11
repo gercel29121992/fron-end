@@ -1,0 +1,22 @@
+
+<div>
+   
+
+<app-listado-generico [listado]="user"></app-listado-generico>
+   
+<mat-nav-list>
+    <mat-list-item *ngFor="let use of user ; let index = index">
+        <img src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"  matListAvatar alt="">
+      <a matLine >email:{{ use.email }}</a>
+       <div matLine>{{ use.id }}</div>
+        <div matLine>Nombre: {{ use.nombre }}</div>
+         <div matLine>apellido : {{ use.apellido }}</div>
+     <div matLine>Estado:{{ use.estado }}</div>
+     <div matLine>{{ use.cargo }}</div>
+    
+       <button mat-icon-button >
+          <mat-icon>delete</mat-icon>
+       </button>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

@@ -1,22 +1,48 @@
 
-<div>
-   
+    <div class="search-bar">
+        <input type="text" class="search" placeholder="¡busca por Email!" (keyup)="searchTerm$.next($event.target.value)">
+      </div>
 
-<app-listado-generico [listado]="user"></app-listado-generico>
    
-<mat-nav-list>
-    <mat-list-item *ngFor="let use of user ; let index = index">
-        <img src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"  matListAvatar alt="">
-      <a matLine >email:{{ use.email }}</a>
-       <div matLine>{{ use.id }}</div>
-        <div matLine>Nombre: {{ use.nombre }}</div>
-         <div matLine>apellido : {{ use.apellido }}</div>
-     <div matLine>Estado:{{ use.estado }}</div>
-     <div matLine>{{ use.cargo }}</div>
+<table mat-table [dataSource]="listFiltered" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+   
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Apellido">
+      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+    </ng-container>
+  
     
-       <button mat-icon-button >
-          <mat-icon>delete</mat-icon>
-       </button>
-    </mat-list-item>
-  </mat-nav-list>
-</div>
+  
+      <ng-container matColumnDef="Bloquear">
+        <th mat-header-cell *matHeaderCellDef> Bloquear </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td  mat-cell *matCellDef="let element">{{element.estado}} </td>
+       
+
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <app-listado-generico [listado]="user"></app-listado-generico>

@@ -67,7 +67,8 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
 import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
 import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-user-app/list-user-app.component';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ProgressBarComponent } from './utilidades/progresbar/progress-bar/progress-bar.component';
 
 
 @NgModule({
@@ -117,6 +118,7 @@ import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-us
     ModificarLoginAppComponent,
     ActivarUserAppComponent,
     ListUserAppComponent,
+   
   
   
     
@@ -145,6 +147,7 @@ import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-us
     MatListModule,
     MatProgressSpinnerModule,
     MatInputModule,
+    MatProgressBarModule,
    
     
    

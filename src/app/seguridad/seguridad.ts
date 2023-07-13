@@ -11,6 +11,18 @@ export interface credencialesUsuario{
 
   
 }
+export interface credencialesUsuarioedit{
+    id:number;
+    email: string;
+    nombre: string;
+    ayudapass: string;
+    apellido: string;
+    sexo: string;
+   
+  
+
+  
+}
 
 export interface respuestaAutenticacion {
     token: string;

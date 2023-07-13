@@ -1,65 +1,40 @@
-<mat-toolbar color="primary">
-    <div >
+
+<mat-toolbar>
+  <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"*ngIf="!isSmallScreen">HOME</span>
+    <span class="example-spacer"*ngIf="!isSmallScreen">EDUCATION</span>
+    <span class="example-spacer"*ngIf="!isSmallScreen">MEMBRESÍA</span>
+    <span class="example-spacer"*ngIf="!isSmallScreen">CONTACT US</span>
+    <button *ngIf="isSmallScreen" mat-icon-button class="example-icon" class="example-spacer" routerLink="/login"  aria-label="Example icon-button with share icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button *ngIf="isSmallScreen" mat-icon-button class="example-icon" class="example-spacer" routerLink="/login"  aria-label="Example icon-button with share icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button> 
+      <button *ngIf="isSmallScreen" mat-icon-button class="example-icon" class="example-spacer" routerLink="/login"  aria-label="Example icon-button with share icon">
+        <mat-icon>call</mat-icon>
+      </button>
+
+     
+    <app-autorizado>
+        <ng-container autorizado>
+            <span *ngIf="!isSmallScreen">  {{seguridadService.obtenerCampoJWT('http://schemas.microsoft.com/ws/2008/06/identity/claims/role')}}</span>
+            <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with share icon">
+                <mat-icon>input</mat-icon>
+              </button>
+        </ng-container>
        
-       <button mat-icon-button (click)="onToggleSidenav()">
-                    <mat-icon>menu</mat-icon>
-                </button>
-        <a *ngIf="!isSmallScreen"    routerLink="/home">Home</a>
-        
-    </div>
-    <div >
-       
-        
-                 
-        <input *ngIf="isSmallScreen" type="text" placeholder="Search..">
-        <button *ngIf="isSmallScreen" mat-icon-button >
-            <mat-icon>search</mat-icon>
-         </button>
-         
-     </div>
-    <div *ngIf="!isSmallScreen" fxLayout="row" fxLayoutAlign="space-between">
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a routerLink="/owner">Tendencias</a>
-            </li>
-           
-        </ul>
-    </div>
-    <div *ngIf="!isSmallScreen"  fxLayout="row" fxLayoutAlign="space-between">
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a  routerLink="/owner">Rebajas</a>
-            </li>
-           
-        </ul>
-    </div>
-<app-autorizado>
-    <ng-container autorizado>
-        <div  *ngIf="!isSmallScreen" class="espacio">
-            <ul  class="navigation-items">
-                <li>
-                    <a routerLink="/owner">{{seguridadService.obtenerCampoJWT('email')}}</a>
-                </li>
-                <li>
-                    <a (click)="logout()">Exit</a>
-                </li>
-               
-            </ul>
-        </div>
-    </ng-container>
     <ng-container noAutorizado>
-       
-            <div  *ngIf="!isSmallScreen" class="espacio">
-                <ul  class="navigation-items">
-                    <li>
-                        <a routerLink="/Home">Login</a>
-                    </li>
-                   
-                </ul>
-            </div>
+        <button mat-icon-button class="example-icon" routerLink="/login"  aria-label="Example icon-button with share icon">
+            <mat-icon>account_circle</mat-icon>
+          </button>
     </ng-container>
-    
 </app-autorizado>
-
-
   </mat-toolbar>

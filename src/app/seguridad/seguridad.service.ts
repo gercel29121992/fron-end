@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { credencialesUsuario, respuestaAutenticacion, usuarioDTO } from './seguridad';
+import { credencialesUsuario, credencialesUsuarioedit, respuestaAutenticacion, usuarioDTO } from './seguridad';
 
 @Injectable({
   providedIn: 'root'
@@ -20,13 +20,29 @@ export class SeguridadService {
     let params = new HttpParams();
     params = params.append('pagina', pagina.toString());
     params = params.append('recordsPorPagina', recordsPorPagina.toString());
-    return this.httpClient.get<usuarioDTO[]>(`${this.apiURL}/listadousuarios`, 
+    return this.httpClient.get<usuarioDTO[]>(`${this.apiURL}/listadoUsuarios`, 
     {observe: 'response', params})
   }
+
+
+  obtenerUsuario(email:string): Observable<any>{
+    let params = new HttpParams();
+    params = params.append('email', email.toString());
+  
+    return this.httpClient.get<usuarioDTO[]>(`${this.apiURL}/Usuario`, 
+    {observe: 'response', params})
+  }
+
+
+ 
 
   hacerAdmin(usuarioId: string){
     const headers = new HttpHeaders('Content-Type: application/json');
     return this.httpClient.post(`${this.apiURL}/hacerAdmin`, JSON.stringify(usuarioId), {headers});
+  }
+  bloq(usuarioId: string){
+    const headers = new HttpHeaders('Content-Type: application/json');
+    return this.httpClient.post(`${this.apiURL}/bloq`, JSON.stringify(usuarioId), {headers});
   }
 
   removerAdmin(usuarioId: string){
@@ -72,6 +88,10 @@ export class SeguridadService {
 
   registrar(credenciales: credencialesUsuario): Observable<respuestaAutenticacion>{
     return this.httpClient.post<respuestaAutenticacion>(this.apiURL + '/crear', credenciales);
+  }
+  
+  edit(credenciales: credencialesUsuario): Observable<any>{
+    return this.httpClient.post<any>(this.apiURL + '/edit', credenciales);
   }
 
   login(credenciales: credencialesUsuario): Observable<respuestaAutenticacion>{

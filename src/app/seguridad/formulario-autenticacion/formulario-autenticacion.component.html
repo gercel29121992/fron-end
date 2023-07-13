@@ -12,13 +12,13 @@
                 <mat-error>{{obtenerMensajeErrorEmail()}}</mat-error>
             </mat-form-field>
         
-            <mat-form-field appearance="outline">
+            <mat-form-field  *ngIf=" accion=='Registro' || accion=='Login'"appearance="outline">
                 <mat-label>Password</mat-label>
                 <input type="password" formControlName="password" matInput />
                 <mat-error>El campo Password es requerido</mat-error>
             </mat-form-field>
             
-            <mat-form-field   *ngIf="accion=='Editar'|| accion=='Registro'" appearance="outline">
+            <mat-form-field   *ngIf=" accion=='Registro'" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input type="password" formControlName="password2" matInput />
                 

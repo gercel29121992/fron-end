@@ -19,6 +19,7 @@ export class AutorizadoComponent implements OnInit {
   estaAutorizado(): boolean {
     if (this.rol){
       return this.seguridadService.obtenerRol() === this.rol;
+
     } else{
       return this.seguridadService.estaLogueado();
     }

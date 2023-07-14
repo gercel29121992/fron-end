@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private seguridadService: SeguridadService, 
     private router: Router) { }
+    public isloading=false;
 
     errores: string[] = [];
 
@@ -20,8 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(credenciales: credencialesUsuario){
+    this.isloading=true;
     this.seguridadService.login(credenciales)
     .subscribe(respuesta => {
+    this.isloading=false;
+
       this.seguridadService.guardarToken(respuesta);
       this.router.navigate(['/']);
     }, errores => this.errores );

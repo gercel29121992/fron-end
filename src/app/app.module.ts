@@ -68,7 +68,7 @@ import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modi
 import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
 import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-user-app/list-user-app.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { ProgressBarComponent } from './utilidades/progresbar/progress-bar/progress-bar.component';
+import { LoadingSpinnerComponent } from './utilidades/progresbar/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -110,7 +110,7 @@ import { ProgressBarComponent } from './utilidades/progresbar/progress-bar/progr
     FormularioAutenticacionComponent,
     RegistroComponent,
     AutorizadoComponent,
-  
+
     CrearTallaComponent,
     EditarTallaComponent,
     FormularioTallaComponent,
@@ -118,6 +118,8 @@ import { ProgressBarComponent } from './utilidades/progresbar/progress-bar/progr
     ModificarLoginAppComponent,
     ActivarUserAppComponent,
     ListUserAppComponent,
+    LoadingSpinnerComponent,
+ 
    
   
   

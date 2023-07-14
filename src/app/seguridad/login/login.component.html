@@ -2,3 +2,4 @@
 (onSubmit)="login($event)"
 [errores]="errores"
 [accion]="'Login'"></app-formulario-autenticacion>
+<app-loading-spinner *ngIf="isloading"></app-loading-spinner>

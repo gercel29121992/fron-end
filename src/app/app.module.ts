@@ -69,6 +69,7 @@ import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/
 import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-user-app/list-user-app.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { LoadingSpinnerComponent } from './utilidades/progresbar/loading-spinner/loading-spinner.component';
+import { ModificarPasswordComponent } from './seguridad/modificar-password/modificar-password.component';
 
 
 @NgModule({
@@ -119,6 +120,7 @@ import { LoadingSpinnerComponent } from './utilidades/progresbar/loading-spinner
     ActivarUserAppComponent,
     ListUserAppComponent,
     LoadingSpinnerComponent,
+    ModificarPasswordComponent,
  
    
   

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 //import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 import { credencialesUsuario } from '../seguridad';
 import { SeguridadService } from '../seguridad.service';
+import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,10 @@ export class LoginComponent implements OnInit {
 
       this.seguridadService.guardarToken(respuesta);
       this.router.navigate(['/']);
-    }, errores => this.errores );
+    }, errores =>{ 
+      this.errores=parsearErroresAPI(errores)
+      this.isloading=false;}  );
+    
   }
 
 }

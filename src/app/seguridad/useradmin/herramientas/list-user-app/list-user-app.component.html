@@ -47,4 +47,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <app-listado-generico [listado]="user"></app-listado-generico>
+  <app-loading-spinner *ngIf="isloading"></app-loading-spinner>
+ 

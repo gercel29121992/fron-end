@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-//import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
+
 import { credencialesUsuario } from '../seguridad';
 import { SeguridadService } from '../seguridad.service';
+import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { SeguridadService } from '../seguridad.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  public isloading=false;
 
   constructor(private seguridadService: SeguridadService,
     private router: Router) { }
@@ -23,13 +25,16 @@ export class RegistroComponent implements OnInit {
 
   registrar(credenciales: credencialesUsuario){
     console.log(credenciales)
+    this.isloading=true;
+
     this.seguridadService.registrar(credenciales)
     .subscribe(respuesta => {
       console.log(respuesta);
       
       this.seguridadService.guardarToken(respuesta);
       this.router.navigate(['/']);
-    }, errores => this.errores );
+    }, errores => this.errores=parsearErroresAPI(errores)  );
+    this.isloading=false;
   }
 
 }

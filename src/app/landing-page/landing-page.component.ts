@@ -8,20 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
-      this.peliculasEnCines = [{
-        titulo: 'Spider-Man',
+      this.menbresia = [{
+        titulo: 'clasica',
         fechaLanzamiento: new Date(),
         precio: 1400.99,
-        poster: 'https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg'
+        poster: 'https://www.cityclub.com.mx/dw/image/v2/BGBD_PRD/on/demandware.static/-/Library-Sites-CityClubSharedLib/default/dw1a4c84bb/Membresia/250123_LP_cityclub_Membresiaclasica_d.jpg?sw=510&sh=488&sm=fit'
       },
       {
-        titulo: 'Moana',
+        titulo: 'renovacion',
         fechaLanzamiento: new Date('2016-11-14'),
         precio: 300.99,
-        poster: 'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_UX182_CR0,0,182,268_AL_.jpg'
+        poster: 'https://www.cityclub.com.mx/dw/image/v2/BGBD_PRD/on/demandware.static/-/Library-Sites-CityClubSharedLib/default/dw1dbdbbd5/Membresia/250123_LP_cityclub_Renovacion_d.jpg?sw=510&sh=488&sm=fit'
       }];
   }
-  peliculasEnCines;
+  menbresia;
   peliculasProximosEstrenos = [];
 
 }

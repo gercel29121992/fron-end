@@ -19,24 +19,51 @@ export class FormularioAutenticacionComponent implements OnInit {
   @Output()
   onSubmit: EventEmitter<credencialesUsuario> = new EventEmitter<credencialesUsuario>();
   validador: any
+  validadoremail: any
+  validadorpass: any
+  validadorpassrepetir: any
+  validadorpassrepetir3: any
   valor=''
   ngOnInit(): void {
   
   
       if(this.accion=="Registro")
-      {this.validador={validators: [Validators.required]}}
-      else{
-        this.validador={}
+      {this.validador={validators: [Validators.required]}
+      this.validadoremail={validators: [Validators.required, Validators.email]}
+      this.validadorpass={validators: [Validators.required]}
+      this.validadorpassrepetir={validators: [Validators.required]}
+      this.validadorpassrepetir3={}
+    }
+
+      if(this.accion=="Login")
+      {
+        this.validadoremail={validators: [Validators.required, Validators.email]}
+        this.validadorpassrepetir={}
+      this.validadorpassrepetir3={}
+
+
       }
+      if(this.accion=="enviar")
+      {
+        this.validadorpass={validators: [Validators.required]}
+        this.validadorpassrepetir={validators: [Validators.required]}
+        this.validadorpassrepetir3={validators: [Validators.required]}
+    }
+    
+
+      
+        
+     
     this.form = this.formBuilder.group({
-      email: [ '', {validators: [Validators.required, Validators.email]        },      ],
+      email: [ '', this.validadoremail,      ],
       id: [ '',      ],
-      password: [        '',                 this.validador              ], 
-      password2: [        '',        this.validador      ],      
+      password: [        '',                 this.validadorpass ], 
+      password2: [        '',        this.validadorpassrepetir      ],      
+      password3: [        '',        this.validadorpassrepetir3      ],      
       nombre: [        '',        this.validador      ],
       apellido: [        '',        this.validador      ],
       sexo: [        '',        this.validador      ],
-      ayudapass: [        'dfssd',        this.validador      ],
+      ayudapass: [        'dfssd'            ],
    
     
     });
@@ -46,8 +73,16 @@ export class FormularioAutenticacionComponent implements OnInit {
     if(this.accion=='Editar'){
       this.seguridadService.obtenerUsuario(this.seguridadService.obtenerCampoJWT('email')).subscribe(respuesta => {
         console.log(respuesta)
-        this.form.setValue({id:respuesta.body.id,email:respuesta.body.email,password:"",password2:"dd",nombre:respuesta.body.nombre,apellido:respuesta.body.apellido,sexo:respuesta.body.sexo,ayudapass:'sdf'});
+        this.form.setValue({id:respuesta.body.id,email:respuesta.body.email,password:"",password2:"",password3:"",nombre:respuesta.body.nombre,apellido:respuesta.body.apellido,sexo:respuesta.body.sexo,ayudapass:'sdf'});
       
+   
+      })
+     }
+     if(this.accion=='enviar'){
+      this.seguridadService.obtenerUsuario(this.seguridadService.obtenerCampoJWT('email')).subscribe(respuesta => {
+        console.log(respuesta)
+        this.form.setValue({id:respuesta.body.id,email:respuesta.body.email,password:"",password2:"",password3:"",nombre:respuesta.body.nombre,apellido:respuesta.body.apellido,sexo:respuesta.body.sexo,ayudapass:'sdf'});
+      console.log(this.form.value)
    
       })
      }
@@ -55,13 +90,27 @@ export class FormularioAutenticacionComponent implements OnInit {
   }
   obtenerMensajeErrorpass()
   {
-    var password = this.form.get('password');
-    var password2 = this.form.get('password2');
-   
+    const password = this.form.get('password')?.value;
+    const password2 = this.form.get('password2')?.value;
+    const password2touch = this.form.get('password2');
 
-  if(password.value!==password2.value)
+   
+console.log(password)
+
+  if(password !==password2)
   {
-    return 'Los campos Password son disintos';
+    if(password2touch.touched)
+    {
+      password2touch?.setErrors({noesigual:true})
+console.log(password2touch)
+
+      return 'Los campos Password son disintos';
+    }
+  }
+  if(password2touch.hasError('noesigual'))
+  {
+    password2touch.setErrors(null)
+
   }
 
 return '';

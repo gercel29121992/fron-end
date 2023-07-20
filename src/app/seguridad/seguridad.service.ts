@@ -93,6 +93,11 @@ export class SeguridadService {
   edit(credenciales: credencialesUsuario): Observable<any>{
     return this.httpClient.post<any>(this.apiURL + '/edit', credenciales);
   }
+ 
+  editpass(credenciales: credencialesUsuario): Observable<any>{
+    return this.httpClient.post<any>(this.apiURL + '/edit/pass', credenciales);
+  }
+  
 
   login(credenciales: credencialesUsuario): Observable<respuestaAutenticacion>{
     return this.httpClient.post<respuestaAutenticacion>(this.apiURL + '/login', credenciales);

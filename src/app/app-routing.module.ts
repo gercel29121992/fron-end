@@ -23,6 +23,7 @@ import { EditarTallaComponent } from './talla/editar-talla/editar-talla.componen
 import { ListTallaComponent } from './talla/list-talla/list-talla.component';
 import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
 import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
+import { ModificarPasswordComponent } from './seguridad/modificar-password/modificar-password.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -31,6 +32,8 @@ const routes: Routes = [
   {path: 'modificar/login', component: ModificarLoginAppComponent},
   {path: 'modificar/login/activate', component:  ActivarUserAppComponent},
   {path: 'productos', component: IndiceProductosComponent},
+  {path: 'modificar/login/pass', component: ModificarPasswordComponent},
+  
   {path: 'productos/Crear', component: CrearProductosComponent},
   {path: 'productos/editar/:id', component: EditarProductosComponent},
   {path: 'generos', component: IndiceGenerosComponent},

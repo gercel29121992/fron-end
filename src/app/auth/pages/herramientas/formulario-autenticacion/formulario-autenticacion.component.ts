@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { credencialesUsuario } from '../seguridad';
-import { SeguridadService } from '../seguridad.service';
+import { credencialesUsuario } from '../../../../seguridad/seguridad';
+import { SeguridadService } from '../../../../seguridad/seguridad.service';
+
 @Component({
   selector: 'app-formulario-autenticacion',
   templateUrl: './formulario-autenticacion.component.html',

@@ -20,19 +20,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  login(credenciales: credencialesUsuario){
-    this.isloading=true;
-    this.seguridadService.login(credenciales)
-    .subscribe(respuesta => {
-    this.isloading=false;
-
-      this.seguridadService.guardarToken(respuesta);
-      this.router.navigate(['/']);
-    }, errores =>{ 
-      this.errores=parsearErroresAPI(errores)
-      this.isloading=false;}  );
-    
-  }
-
 }

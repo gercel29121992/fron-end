@@ -49,7 +49,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormularioAutenticacionComponent } from './seguridad/formulario-autenticacion/formulario-autenticacion.component';
+import { FormularioAutenticacionComponent } from './auth/pages/herramientas/formulario-autenticacion/formulario-autenticacion.component';
 import { LoginComponent } from './seguridad/login/login.component';
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 import { RegistroComponent } from './seguridad/registro/registro.component';
@@ -64,19 +64,29 @@ import { EditarTallaComponent } from './talla/editar-talla/editar-talla.componen
 import { FormularioTallaComponent } from './talla/formulario-talla/formulario-talla.component';
 import { ListTallaComponent } from './talla/list-talla/list-talla.component';
 import { MatInput, MatInputModule } from '@angular/material/input';
-import { ModificarLoginAppComponent } from './seguridad/modificar-login-app/modificar-login-app.component';
-import { ActivarUserAppComponent } from './seguridad/useradmin/activar-user-app/activar-user-app.component';
-import { ListUserAppComponent } from './seguridad/useradmin/herramientas/list-user-app/list-user-app.component';
+
+
+
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { LoadingSpinnerComponent } from './utilidades/progresbar/loading-spinner/loading-spinner.component';
-import { ModificarPasswordComponent } from './seguridad/modificar-password/modificar-password.component';
+import { ModificarPasswordComponent } from './auth/pages/herramientas/modificar-password/modificar-password.component';
+import { NavigacionComponent } from './navigacion/navigacion.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { FullLayoutComponent } from './layouts/full/full-layout.component';
+import { ContentLayoutComponent } from './layouts/content/content-layout.component';
 
+ 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MostrarErroresComponent,
+    ContentLayoutComponent,
+    FullLayoutComponent,
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
     MenuComponent,
@@ -108,7 +118,7 @@ import { ModificarPasswordComponent } from './seguridad/modificar-password/modif
     IndiceProductosComponent,
     FormularioProductosComponent,
     HeadComponent, 
-    FormularioAutenticacionComponent,
+    
     RegistroComponent,
     AutorizadoComponent,
 
@@ -116,11 +126,13 @@ import { ModificarPasswordComponent } from './seguridad/modificar-password/modif
     EditarTallaComponent,
     FormularioTallaComponent,
     ListTallaComponent,
-    ModificarLoginAppComponent,
-    ActivarUserAppComponent,
-    ListUserAppComponent,
+   
+
+   
     LoadingSpinnerComponent,
-    ModificarPasswordComponent,
+ 
+    NavigacionComponent,
+   
  
    
   
@@ -152,10 +164,24 @@ import { ModificarPasswordComponent } from './seguridad/modificar-password/modif
     MatProgressSpinnerModule,
     MatInputModule,
     MatProgressBarModule,
+    SharedModule,
+    AuthModule,
    
     
    
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+   
+    
+   
+    LayoutModule,
+   
+    
+   
+    MatGridListModule,
+   
+    
+   
+    MatCardModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

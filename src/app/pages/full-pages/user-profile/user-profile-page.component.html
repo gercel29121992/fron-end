@@ -1,0 +1,178 @@
+<!--User Profile Starts-->
+<!--Basic User Details Starts-->
+<section id="user-profile">
+  <div class="row">
+    <div class="col-12">
+      <div class="card profile-with-cover">
+        <!-- <div class="card-img-top img-fluid bg-cover height-300" style="background: url('assets/img/photos/14.jpg') 50%;"></div> -->
+        <div class="media profil-cover-details row">
+          <div class="col-5">
+            <div class="align-self-start halfway-fab pl-3 pt-2">
+              <div class="text-left">
+                <!-- <h3 class="card-title white">Jose Diaz</h3> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="align-self-center halfway-fab text-center">
+              <a class="profile-image">
+                <img src="assets/img/portrait/avatars/avatar-08.png" class="rounded-circle img-border gradient-summer width-100" alt="Card image">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 ">
+              <ul class="profile-menu no-list-style">
+                <li>
+                  <a (click)="showPage('About')" [ngClass]="currentPage === 'About' ? 'primary font-medium-2 font-weight-600 active' : 'primary font-medium-2 font-weight-600'">Perfil</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center">
+              <span class="font-medium-2 text-uppercase">{{name}}</span>
+              <p class="grey font-small-2">{{role}}</p>
+            </div>
+            <div class="col-lg-5 col-md-5">
+              <ul class="profile-menu no-list-style">
+                <li>
+                  <a (click)="showPage('Friends')" [ngClass]="currentPage === 'Friends' ? 'primary font-medium-2 font-weight-600 active' : 'primary font-medium-2 font-weight-600'"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Basic User Details Ends-->
+
+<!--About section starts-->
+<section *ngIf="currentPage === 'About'">
+  <div class="row">
+    <div class="col-12">
+      <div class="content-header">Perfil</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Información</h5>
+        </div>
+        <div class="card-body">
+          <div class="card-block">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <ul class="no-list-style">
+                  <li class="mb-2">
+                    <span class="primary text-bold-500">
+                      <a>
+                        Nombre</a>
+                    </span>
+                    <span class="line-height-2 display-block overflow-hidden">{{name}}</span>
+                  </li>
+                  <li class="mb-2">
+                    <span class="primary text-bold-500">
+                      <a>
+                        Cargo </a>
+                    </span>
+                    <span class="line-height-2 display-block overflow-hidden">{{cargo}}</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <ul class="no-list-style">
+                  <li class="mb-2">
+                    <span class="primary text-bold-500">
+                      <a>
+                        Correo electronico</a>
+                    </span>
+                    <span class="line-height-2 display-block overflow-hidden">{{mail}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--About section ends-->
+
+<!--User's friend section starts-->
+<section id="friends" *ngIf="currentPage === 'Friends'">
+  <div class="row">
+    <div class="col-12">
+      <div class="content-header">Auxiliares</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <img src="./assets/img/portrait/small/avatar-s-3.png" alt="Brek" width="150" class="rounded-circle gradient-mint">
+        </div>
+        <div class="card-body">
+          <div class="card-block text-center">
+            <h4 class="card-title">Brek Padio</h4>
+            <p class="category text-gray font-small-4">Auxiliar #1</p>
+            <a class="btn btn-raised btn-primary">Editar</a>
+            <a class="btn btn-raised btn-danger">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <img src="./assets/img/portrait/small/avatar-s-18.png" alt="Jassi" width="150" class="rounded-circle gradient-pomegranate">
+        </div>
+        <div class="card-body">
+          <div class="card-block text-center">
+            <h4 class="card-title">Jassi Lee</h4>
+            <p class="category text-gray font-small-4">Auxiliar #2</p>
+            <a class="btn btn-raised btn-primary">Editar</a>
+            <a class="btn btn-raised btn-danger">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <img src="./assets/img/portrait/small/avatar-s-11.png" alt="Brek" width="150" class="rounded-circle gradient-orange-amber">
+        </div>
+        <div class="card-body">
+          <div class="card-block text-center">
+            <h4 class="card-title">Peter Steven</h4>
+            <p class="category text-gray font-small-4">Auxiliar #3</p>
+            <a class="btn btn-raised btn-primary">Editar</a>
+            <a class="btn btn-raised btn-danger">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <img src="./assets/img/portrait/small/avatar-s-12.png" alt="Gini" width="150" class="rounded-circle gradient-back-to-earth">
+        </div>
+        <div class="card-body">
+          <div class="card-block text-center">
+            <h4 class="card-title">Gini Fredre</h4>
+            <p class="category text-gray font-small-4">Auxiliar #4</p>
+            <a class="btn btn-raised btn-primary">Editar</a>
+            <a class="btn btn-raised btn-danger">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--User's friend section starts-->
+
+<!--User Profile Starts-->

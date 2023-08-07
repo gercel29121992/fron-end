@@ -5,7 +5,7 @@
 
         <form (submit)="onSubmit.emit(form.value)" [formGroup]="form">
             <h3>{{accion}}</h3>
-            <app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+            
            
             <mat-form-field  *ngIf="  accion!='enviar'" appearance="outline">
                 <mat-label>Email</mat-label>
@@ -54,6 +54,7 @@
         
         
             <div>
+               
                 <button mat-flat-button color="primary" [disabled]="form.invalid">
                     {{accion}}
                 </button>

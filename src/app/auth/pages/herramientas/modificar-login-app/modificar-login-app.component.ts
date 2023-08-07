@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { credencialesUsuario, credencialesUsuarioedit } from '../seguridad';
-import { SeguridadService } from '../seguridad.service';
+import { credencialesUsuario, credencialesUsuarioedit } from '../../../../seguridad/seguridad';
+import { SeguridadService } from '../../../../seguridad/seguridad.service';
 import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 
 @Component({

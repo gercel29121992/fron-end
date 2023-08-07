@@ -16,6 +16,16 @@
 <mat-list-item >
   <a (click)="onSidenavClose()"  matline>Exit</a> <mat-icon>logout</mat-icon>
 </mat-list-item>
+<mat-nav-list>
+  <mat-list-item [matMenuTriggerFor]="menu4">
+    <mat-icon>unfold_more</mat-icon>
+    <a matline>configuracion</a>
+</mat-list-item>
+<mat-menu #menu4="matMenu">
+  <button mat-menu-item routerLink="/modificar/login"(click)="onSidenavClose()">user</button>
+  <button mat-menu-item routerLink="/modificar/login/pass"(click)="onSidenavClose()">Edit password</button>
+</mat-menu>
+</mat-nav-list>
 
      </mat-nav-list>
 
@@ -27,13 +37,13 @@
    <mat-nav-list>
       <mat-list-item >
         <mat-icon>login</mat-icon>
-        <a (click)="onSidenavClose()" routerLink="/login" matline>Login</a>
+        <a (click)="onSidenavClose()" routerLink="/auth" matline>Login</a>
     </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
       <mat-list-item >
         <mat-icon>login</mat-icon>
-        <a (click)="onSidenavClose()" routerLink="/registro" matline>Registrar</a>
+        <a (click)="onSidenavClose()" routerLink="/auth/register" matline>Registrar</a>
     </mat-list-item>
     </mat-nav-list>
     
@@ -91,9 +101,9 @@
         <a matline>configuracion</a>
     </mat-list-item>
     <mat-menu #menu3="matMenu">
-      <button mat-menu-item routerLink="/modificar/login/activate" (click)="onSidenavClose()">aprobar solicitud</button>
-      <button mat-menu-item routerLink="/modificar/login"(click)="onSidenavClose()">user</button>
-      <button mat-menu-item routerLink="/modificar/login/pass"(click)="onSidenavClose()">Edit password</button>
+      <button mat-menu-item routerLink="/auth/modificar/login/activate" (click)="onSidenavClose()">aprobar solicitud</button>
+      <button mat-menu-item routerLink="/auth/modificar/login"(click)="onSidenavClose()">user</button>
+      <button mat-menu-item routerLink="/auth/modificar/login/pass"(click)="onSidenavClose()">Edit password</button>
     </mat-menu>
     </mat-nav-list>
 

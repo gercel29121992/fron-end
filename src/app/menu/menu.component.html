@@ -17,11 +17,11 @@
   <a (click)="onSidenavClose()"  matline>Exit</a> <mat-icon>logout</mat-icon>
 </mat-list-item>
 <mat-nav-list>
-  <mat-list-item [matMenuTriggerFor]="menu4">
+  <mat-list-item [matMenuTriggerFor]="menu3">
     <mat-icon>unfold_more</mat-icon>
     <a matline>configuracion</a>
 </mat-list-item>
-<mat-menu #menu4="matMenu">
+<mat-menu #menu3="matMenu">
   <button mat-menu-item routerLink="/modificar/login"(click)="onSidenavClose()">user</button>
   <button mat-menu-item routerLink="/modificar/login/pass"(click)="onSidenavClose()">Edit password</button>
 </mat-menu>

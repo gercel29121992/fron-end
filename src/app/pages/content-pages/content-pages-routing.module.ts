@@ -26,7 +26,14 @@ const routes: Routes = [
         data: {
           title: 'Maintenance Page'
         }
+      }, {
+        path: 'content-pages',
+        component: MaintenancePageComponent,
+        data: {
+          title: 'Maintenance Page'
+        }
       }
+      
     ]
   }
 ];

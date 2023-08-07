@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Error404PageComponent } from './pages/error404-page/error404-page.component';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -16,7 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
-  declarations: [Error404PageComponent],
+  declarations: [],
   imports:[ MatSidenavModule, 
     MatListModule,
     MatTabsModule,
@@ -29,6 +29,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatInputModule,
     MatProgressBarModule],
  
-  exports:[Error404PageComponent]
+  exports:[]
 })
 export class SharedModule { }
